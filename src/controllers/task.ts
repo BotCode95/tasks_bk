@@ -39,9 +39,9 @@ export const getTaskByTitle = async (req:Request, res:Response) => {
 
 export const postTask =async (req:Request, res:Response) => {
 
-	const {title, description, priority} = req.body
+	const {title, description, priority, status} = req.body
 	try {
-		const task = new Task({title, description, priority})
+		const task = new Task({title, description, priority, status})
 
 
 		await task.save()
